@@ -11,7 +11,7 @@ const CHAT_API_URL = `${process.env.REACT_APP_SERVER_URL}/chat`;
  * @throws Throws an error if the fetch fails or if the status code is not 200.
  */
 export const getChatsByUser = async (username: string) => {
-  const res = await api.get(`${CHAT_API_URL}/getChatsByUser/${username}`);
+  const res = await api.get(`${CHAT_API_URL}/chats/user/${username}`);
 
   if (res.status !== 200) {
     throw new Error('Error when fetching chats for user');

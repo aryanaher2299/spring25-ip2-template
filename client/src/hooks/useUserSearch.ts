@@ -12,6 +12,7 @@ import { ChangeEvent, useState } from 'react';
  */
 const useUserSearch = (setUserFilter: (search: string) => void) => {
   // TODO: Task 1 - Define the state(s) required to manage the input value.
+  const [val, setVal] = useState('');
 
   /**
    * Function to handle changes in the input field.
@@ -20,6 +21,9 @@ const useUserSearch = (setUserFilter: (search: string) => void) => {
    */
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     // TODO: Task 1 - Handle the input change event and update the input value.
+    const newVal = e.target.value;
+    setVal(newVal);
+    setUserFilter(newVal);
   };
 
   return {
